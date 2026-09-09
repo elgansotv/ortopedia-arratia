@@ -64,7 +64,7 @@ const Calendar: React.FC<CalendarProps> = ({ bookedAppointments, blockedSlots, o
               setShowForm(false);
             }
           }}
-          className={`flex items-center justify-center h-10 w-10 sm:h-12 sm:w-12 rounded-full transition-all ${
+          className={`flex items-center justify-center h-8 w-8 sm:h-11 sm:w-11 md:h-12 md:w-12 text-xs sm:text-sm mx-auto rounded-full transition-all ${
             disabled ? 'text-gray-300 cursor-default' :
             isSelected ? 'bg-blue-600 text-white font-semibold shadow-md shadow-blue-500/30 scale-105 cursor-pointer' :
             'text-gray-700 hover:bg-blue-50 hover:text-blue-600 cursor-pointer'
@@ -120,8 +120,8 @@ const Calendar: React.FC<CalendarProps> = ({ bookedAppointments, blockedSlots, o
   }
 
   return (
-    <div className="bg-white rounded-3xl p-6 md:p-10 shadow-sm border border-gray-100 max-w-5xl mx-auto">
-      <div className="grid lg:grid-cols-[1fr_300px] gap-10">
+    <div className="bg-white rounded-3xl p-4 sm:p-6 md:p-10 shadow-sm border border-gray-100 max-w-5xl mx-auto w-full overflow-hidden">
+      <div className="grid lg:grid-cols-[1fr_300px] gap-8 lg:gap-10 w-full min-w-0">
         <div>
           <div className="flex justify-between items-center mb-6 px-2">
             <h3 className="text-lg font-medium text-gray-900 capitalize">
@@ -354,14 +354,14 @@ export default function App() {
   };
 
   return (
-    <div className="bg-white min-h-screen text-gray-900">
-      <section className="relative min-h-screen overflow-hidden bg-[#f0f0ee]">
+    <div className="bg-white min-h-screen text-gray-900 overflow-x-hidden w-full max-w-full">
+      <section className="relative min-h-screen overflow-hidden bg-[#f0f0ee] w-full max-w-full">
         <video
           autoPlay
           muted
           loop
           playsInline
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover object-[25%_center] lg:object-center"
         >
           <source
             src="./video_loop.mp4"
@@ -371,14 +371,14 @@ export default function App() {
 
         <div className="relative z-10 flex flex-col min-h-screen">
           {/* Logo en esquina superior izquierda */}
-          <div className="absolute top-4 sm:top-6 left-4 sm:left-8 z-50">
-            <img src="./logo.png" alt="Ortopedia Arratia Logo" className="h-10 sm:h-12 w-auto object-contain drop-shadow-md" />
+          <div className="absolute top-3 sm:top-6 left-4 sm:left-8 z-50">
+            <img src="./logo.png" alt="Ortopedia Arratia Logo" className="h-7 sm:h-9 lg:h-12 w-auto object-contain drop-shadow-sm" />
           </div>
 
-          {/* Menú Dinámico 3D Central */}
-          <nav className="fixed top-4 sm:top-6 left-1/2 -translate-x-1/2 z-50 flex items-center justify-center transition-all duration-300 w-[calc(100%-12rem)] sm:w-auto">
+          {/* Menú Dinámico 3D Central (visible solo en ordenador / desktop lg:) */}
+          <nav className="hidden lg:flex fixed top-6 left-1/2 -translate-x-1/2 z-50 items-center justify-center transition-all duration-300">
             <div
-              className="relative flex items-center gap-1 sm:gap-2 rounded-full p-1.5 sm:p-2 bg-gradient-to-b from-white/95 via-white/90 to-white/75 backdrop-blur-xl border border-white/90 shadow-[0_16px_36px_-6px_rgba(0,0,0,0.22),0_6px_16px_-4px_rgba(0,0,0,0.12),inset_0_1.5px_2px_rgba(255,255,255,1),inset_0_-2px_4px_rgba(0,0,0,0.06)]"
+              className="relative flex items-center gap-2 rounded-full p-2 bg-gradient-to-b from-white/95 via-white/90 to-white/75 backdrop-blur-xl border border-white/90 shadow-[0_16px_36px_-6px_rgba(0,0,0,0.22),0_6px_16px_-4px_rgba(0,0,0,0.12),inset_0_1.5px_2px_rgba(255,255,255,1),inset_0_-2px_4px_rgba(0,0,0,0.06)]"
             >
               {/* Reflejo especular superior para relieve 3D */}
               <div className="absolute top-1 left-4 right-4 h-[1px] bg-gradient-to-r from-transparent via-white to-transparent pointer-events-none rounded-full" />
@@ -387,7 +387,7 @@ export default function App() {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="relative px-3.5 sm:px-6 py-2 rounded-full text-[13px] sm:text-[14px] font-semibold text-gray-700 hover:text-blue-600 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_4px_12px_-2px_rgba(0,0,0,0.1),inset_0_1px_1px_rgba(255,255,255,0.9)] hover:bg-white/90 active:translate-y-0.5 active:scale-95 text-center"
+                  className="relative px-6 py-2 rounded-full text-[14px] font-semibold text-gray-700 hover:text-blue-600 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_4px_12px_-2px_rgba(0,0,0,0.1),inset_0_1px_1px_rgba(255,255,255,0.9)] hover:bg-white/90 active:translate-y-0.5 active:scale-95 text-center whitespace-nowrap"
                 >
                   {link.name}
                 </a>
@@ -395,12 +395,12 @@ export default function App() {
             </div>
           </nav>
 
-          {/* Botón arriba a la derecha con forma de llave para login de empleados */}
-          <div className="absolute top-4 sm:top-6 right-4 sm:right-8 z-50">
+          {/* Botón arriba a la derecha con forma de llave para login de empleados (visible solo en ordenador / desktop lg:) */}
+          <div className="hidden lg:block absolute top-6 right-8 z-50">
             <button
               id="btn-login-empleados-llave"
               onClick={() => setIsEmployeeModalOpen(true)}
-              className="group relative flex items-center gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-full bg-gradient-to-b from-white/95 via-white/90 to-white/75 backdrop-blur-xl border border-white/90 text-gray-800 hover:text-blue-700 transition-all duration-300 shadow-[0_12px_28px_-4px_rgba(0,0,0,0.2),0_4px_10px_-2px_rgba(0,0,0,0.08),inset_0_1.5px_2px_rgba(255,255,255,1),inset_0_-2px_4px_rgba(0,0,0,0.06)] hover:shadow-[0_16px_32px_-4px_rgba(37,99,235,0.25),inset_0_1.5px_2px_rgba(255,255,255,1)] hover:-translate-y-0.5 active:translate-y-0.5 active:scale-95"
+              className="group relative flex items-center gap-2 px-4 py-2.5 rounded-full bg-gradient-to-b from-white/95 via-white/90 to-white/75 backdrop-blur-xl border border-white/90 text-gray-800 hover:text-blue-700 transition-all duration-300 shadow-[0_12px_28px_-4px_rgba(0,0,0,0.2),0_4px_10px_-2px_rgba(0,0,0,0.08),inset_0_1.5px_2px_rgba(255,255,255,1),inset_0_-2px_4px_rgba(0,0,0,0.06)] hover:shadow-[0_16px_32px_-4px_rgba(37,99,235,0.25),inset_0_1.5px_2px_rgba(255,255,255,1)] hover:-translate-y-0.5 active:translate-y-0.5 active:scale-95"
               title="Acceso de empleados · Revisar calendario de citas"
             >
               {/* Icono de llave con estilo 3D */}
@@ -408,21 +408,21 @@ export default function App() {
                 <Key className="w-3.5 h-3.5" />
               </div>
               <div className="flex flex-col text-left">
-                <span className="text-[12px] sm:text-[13px] font-bold text-gray-800 group-hover:text-blue-700 leading-none">
+                <span className="text-[13px] font-bold text-gray-800 group-hover:text-blue-700 leading-none">
                   Empleados
                 </span>
-                <span className="text-[10px] text-gray-400 font-medium hidden sm:inline leading-tight">
+                <span className="text-[10px] text-gray-400 font-medium leading-tight">
                   Ver citas
                 </span>
               </div>
             </button>
           </div>
 
-          <main className="flex-1 flex items-end pb-10 sm:pb-16 lg:pb-20 px-6 sm:px-12 md:px-20 lg:px-28 pt-24">
-            <div className="max-w-md">
+          <main className="flex-1 flex items-end pb-6 sm:pb-8 lg:pb-20 px-4 sm:px-8 md:px-16 lg:px-28 pt-16 sm:pt-20 lg:pt-24 landscape:pb-4 landscape:pt-12">
+            <div className="max-w-[200px] sm:max-w-[215px] lg:max-w-md landscape:max-w-[190px]">
               <a
                 href="#historia"
-                className="inline-flex items-center gap-1.5 text-[12px] font-semibold text-blue-600 bg-white/80 backdrop-blur-md px-3 py-1.5 rounded-full hover:bg-white transition-colors mb-4 group shadow-sm"
+                className="inline-flex items-center gap-1.5 text-[10px] sm:text-[11px] lg:text-[12px] font-semibold text-blue-600 bg-white/85 backdrop-blur-md px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full hover:bg-white transition-colors mb-2 sm:mb-3 lg:mb-3.5 group shadow-sm landscape:mb-1.5 landscape:py-0.5 landscape:text-[9.5px]"
               >
                 Más de 25 años a tu lado
                 <span className="inline-block transition-transform duration-200 group-hover:translate-x-0.5">
@@ -430,19 +430,19 @@ export default function App() {
                 </span>
               </a>
 
-              <h1 className="text-[1.75rem] sm:text-[2rem] leading-[1.15] font-medium text-gray-900 tracking-tight mb-4">
+              <h1 className="text-[1.12rem] sm:text-[1.24rem] lg:text-[2.1rem] leading-[1.16] font-medium text-gray-900 tracking-tight mb-2 sm:mb-3 lg:mb-4 landscape:text-[1.05rem] landscape:leading-[1.14] landscape:mb-1.5">
                 Soluciones para vivir<br />
                 con más autonomía<br />
                 cada día.
               </h1>
 
-              <p className="text-[14px] text-gray-800 font-medium mb-6 max-w-sm">
+              <p className="text-[11px] sm:text-[12px] lg:text-[14px] leading-snug text-gray-700 font-medium mb-3 sm:mb-4 lg:mb-5 max-w-[175px] sm:max-w-[195px] lg:max-w-sm landscape:max-w-[170px] landscape:text-[10.5px] landscape:mb-2">
                 Asesoramiento profesional y cercano en Galdakao.
               </p>
 
               <a
                 href="#citas"
-                className="inline-flex items-center gap-2 text-[14px] font-medium text-white bg-blue-600 rounded-full px-6 py-3 hover:bg-blue-700 transition-all duration-200 group shadow-sm"
+                className="inline-flex items-center gap-1.5 text-[11.5px] sm:text-[12.5px] lg:text-[14px] font-medium text-white bg-blue-600 rounded-full px-4 py-2 sm:px-5 sm:py-2.5 lg:px-6 lg:py-3 hover:bg-blue-700 transition-all duration-200 group shadow-sm landscape:px-3 landscape:py-1.5 landscape:text-[11px]"
               >
                 Pide tu cita
                 <span className="transition-transform duration-200 group-hover:translate-x-0.5">
@@ -454,8 +454,8 @@ export default function App() {
         </div>
       </section>
 
-      <section className="bg-white border-b border-gray-100 py-8 px-6 sm:px-12 md:px-20 lg:px-28 relative z-20">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-gray-100">
+      <section className="bg-white border-b border-gray-100 py-8 px-4 sm:px-8 md:px-16 lg:px-28 relative z-20 w-full max-w-full overflow-hidden">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-gray-100 w-full min-w-0">
           <div className="pt-4 md:pt-0">
             <p className="text-3xl font-medium text-blue-600 mb-1">+25 años</p>
             <p className="text-sm text-gray-600 font-medium">de experiencia</p>
@@ -471,10 +471,10 @@ export default function App() {
         </div>
       </section>
 
-      <section id="historia" className="py-24 px-6 sm:px-12 md:px-20 lg:px-28 bg-[#fdfdfd]">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <div>
+      <section id="historia" className="py-20 sm:py-24 px-4 sm:px-8 md:px-16 lg:px-28 bg-[#fdfdfd] w-full max-w-full overflow-hidden">
+        <div className="max-w-6xl mx-auto w-full">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-20 items-center w-full min-w-0">
+            <div className="w-full min-w-0">
               <h2 className="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 mb-6">Más de 25 años cuidando de Galdakao</h2>
               <div className="space-y-4 text-gray-600 leading-relaxed text-sm md:text-base">
                 <p>
@@ -491,7 +491,7 @@ export default function App() {
                 </p>
               </div>
             </div>
-            <div className="bg-gray-100 rounded-3xl aspect-square sm:aspect-video lg:aspect-square overflow-hidden relative border border-gray-200">
+            <div className="bg-gray-100 rounded-3xl aspect-square sm:aspect-video lg:aspect-square overflow-hidden relative border border-gray-200 w-full">
               <img 
                 src="./unnamed.webp" 
                 alt="Clínica Ortopedia Arratia en Galdakao" 
@@ -503,15 +503,15 @@ export default function App() {
       </section>
 
       {/* Catálogo de Soluciones */}
-      <section className="py-24 px-6 sm:px-12 md:px-20 lg:px-28 bg-white border-t border-gray-100">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+      <section className="py-20 sm:py-24 px-4 sm:px-8 md:px-16 lg:px-28 bg-white border-t border-gray-100 w-full max-w-full overflow-hidden">
+        <div className="max-w-6xl mx-auto w-full">
+          <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 mb-4">Soluciones para ti</h2>
             <p className="text-gray-500 max-w-2xl mx-auto">Disponemos de un amplio catálogo de productos adaptados para mejorar tu autonomía y comodidad.</p>
           </div>
-          <div className="flex flex-wrap gap-3 justify-center max-w-4xl mx-auto">
+          <div className="flex flex-wrap gap-2.5 sm:gap-3 justify-center max-w-4xl mx-auto w-full">
              {["Sillas de ruedas", "Cojines antiescaras", "Fajas y corsés", "Ortesis", "Férulas a medida", "Camas eléctricas", "Colchones antiescaras", "Grúas", "Rampas y subescaleras", "Andadores", "Muletas y bastones", "Prótesis de mama", "Presoterapia", "Plantillas a medida", "Calzado especial", "Ayudas para baño/WC"].map(item => (
-                <span key={item} className="px-5 py-2.5 bg-gray-50 border border-gray-200 hover:border-blue-300 transition-colors rounded-full text-sm font-medium text-gray-700">
+                <span key={item} className="px-4 sm:px-5 py-2 sm:py-2.5 bg-gray-50 border border-gray-200 hover:border-blue-300 transition-colors rounded-full text-xs sm:text-sm font-medium text-gray-700 text-center">
                   {item}
                 </span>
              ))}
@@ -519,16 +519,16 @@ export default function App() {
         </div>
       </section>
 
-      <section id="conocenos" className="py-24 px-6 sm:px-12 md:px-20 lg:px-28 bg-[#fdfdfd] border-t border-gray-100">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+      <section id="conocenos" className="py-20 sm:py-24 px-4 sm:px-8 md:px-16 lg:px-28 bg-[#fdfdfd] border-t border-gray-100 w-full max-w-full overflow-hidden">
+        <div className="max-w-6xl mx-auto w-full">
+          <div className="text-center mb-12 sm:mb-16">
             <h2 className="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 mb-4">Conócenos</h2>
             <p className="text-gray-500 max-w-2xl mx-auto">Estamos aquí para ayudarte. Visítanos en nuestra clínica o contáctanos para cualquier duda.</p>
           </div>
           
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
-            <div>
-              <div className="bg-gray-50 p-8 rounded-3xl border border-gray-100 mb-10">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-20 w-full min-w-0">
+            <div className="w-full min-w-0">
+              <div className="bg-gray-50 p-6 sm:p-8 rounded-3xl border border-gray-100 mb-10 w-full">
                 <h3 className="text-xl font-medium mb-6 text-gray-900">Información de Contacto</h3>
                 <div className="space-y-6 text-gray-700">
                   <div className="flex gap-4">
@@ -557,9 +557,36 @@ export default function App() {
                 </div>
               </div>
 
-              <div className="w-full overflow-hidden">
-                <h3 className="text-xl font-medium mb-6 text-gray-900 px-2">Lo que dicen de nosotros</h3>
-                <div className="relative w-full overflow-hidden">
+              <div className="w-full min-w-0">
+                <h3 className="text-xl font-medium mb-6 text-gray-900 px-1">Lo que dicen de nosotros</h3>
+                
+                {/* En móvil (incluido formato horizontal): Lista 100% vertical adaptada a la pantalla */}
+                <div className="lg:hidden flex flex-col gap-4 w-full">
+                  <div className="w-full bg-white p-5 rounded-2xl border border-gray-100 shadow-sm">
+                    <div className="flex gap-1 mb-2.5">
+                      {[...Array(5)].map((_, j) => <Star key={j} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}
+                    </div>
+                    <p className="text-sm text-gray-600 italic leading-relaxed">"Excelente trato y profesionalidad. Me asesoraron perfectamente para encontrar la solución."</p>
+                    <p className="text-sm font-medium mt-3 text-gray-900">— María L.</p>
+                  </div>
+                  <div className="w-full bg-white p-5 rounded-2xl border border-gray-100 shadow-sm">
+                    <div className="flex gap-1 mb-2.5">
+                      {[...Array(5)].map((_, j) => <Star key={j} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}
+                    </div>
+                    <p className="text-sm text-gray-600 italic leading-relaxed">"Llevo años confiando en ellos y la atención siempre es de 10. Son rápidos y los productos geniales."</p>
+                    <p className="text-sm font-medium mt-3 text-gray-900">— Juan A.</p>
+                  </div>
+                  <div className="w-full bg-white p-5 rounded-2xl border border-gray-100 shadow-sm">
+                    <div className="flex gap-1 mb-2.5">
+                      {[...Array(5)].map((_, j) => <Star key={j} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}
+                    </div>
+                    <p className="text-sm text-gray-600 italic leading-relaxed">"Increíble atención personalizada. Me resolvieron todas las dudas sobre mi nueva silla de ruedas."</p>
+                    <p className="text-sm font-medium mt-3 text-gray-900">— Elena R.</p>
+                  </div>
+                </div>
+
+                {/* En ordenador/pantalla grande: Carrusel suave perfectamente delimitado */}
+                <div className="hidden lg:block relative w-full overflow-hidden max-w-full">
                   <div className="flex w-max animate-marquee gap-4">
                     {/* Primera serie de reseñas */}
                     <div className="w-[300px] shrink-0 bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
@@ -610,7 +637,7 @@ export default function App() {
               </div>
             </div>
 
-            <div className="h-[400px] lg:h-auto min-h-[500px] bg-gray-100 rounded-3xl overflow-hidden relative border border-gray-200">
+            <div className="w-full h-[360px] sm:h-[420px] lg:h-auto min-h-[360px] lg:min-h-[500px] bg-gray-100 rounded-3xl overflow-hidden relative border border-gray-200">
                 <iframe 
                   src="https://maps.google.com/maps?q=Euskadi%20Kalea,%2011,%2048960%20Kurtzea,%20Bizkaia&t=&z=15&ie=UTF8&iwloc=&output=embed" 
                   width="100%" 
@@ -619,14 +646,15 @@ export default function App() {
                   loading="lazy" 
                   referrerPolicy="no-referrer-when-downgrade"
                   title="Mapa de ubicación"
+                  className="w-full h-full"
                 ></iframe>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="citas" className="py-24 px-6 sm:px-12 md:px-20 lg:px-28 bg-[#f8f9fa]">
-        <div className="max-w-6xl mx-auto">
+      <section id="citas" className="py-20 sm:py-24 px-4 sm:px-8 md:px-16 lg:px-28 bg-[#f8f9fa] w-full max-w-full overflow-hidden">
+        <div className="max-w-6xl mx-auto w-full">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 mb-4">Pide tu Cita</h2>
             <p className="text-gray-500 max-w-2xl mx-auto">Selecciona el día y la hora que mejor te venga y nos pondremos en contacto contigo para confirmar.</p>
@@ -640,16 +668,16 @@ export default function App() {
         </div>
       </section>
 
-      {/* Pie de página */}
-      <footer className="py-8 border-t border-gray-100 bg-white text-xs text-gray-500">
-        <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p>© {new Date().getFullYear()} Ortopedia Arratia · Más de 25 años cuidando de Galdakao</p>
-          <div className="flex items-center gap-3 text-gray-400">
-            <a href="/dist.zip" download="ortopedia-arratia-cloudflare.zip" className="hover:text-blue-600 transition-colors">
-              Descargar ZIP para Cloudflare
-            </a>
-            <span>•</span>
-            <span>Galdakao, Bizkaia</span>
+      {/* Footer con Copyright e Información Legal */}
+      <footer className="bg-[#181a1d] text-gray-400 text-sm py-10 px-4 sm:px-8 md:px-12 border-t border-gray-800 w-full max-w-full overflow-hidden">
+        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+          <div className="flex items-center">
+            <span className="text-white font-semibold tracking-tight text-base">Ortopedia Arratia</span>
+          </div>
+
+          <div className="text-center sm:text-right text-xs text-gray-400">
+            <p className="mb-1">Euskadi Kalea, 11 · 48960 Galdakao, Bizkaia · Tel: 944 56 68 42</p>
+            <p>© {new Date().getFullYear()} Ortopedia Arratia. Todos los derechos reservados.</p>
           </div>
         </div>
       </footer>
