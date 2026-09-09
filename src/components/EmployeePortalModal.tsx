@@ -22,8 +22,7 @@ import {
   Ban,
   Unlock,
   Check,
-  Maximize2,
-  Download
+  Maximize2
 } from 'lucide-react';
 import { 
   format, 
@@ -216,17 +215,6 @@ export const EmployeePortalModal: React.FC<EmployeePortalModalProps> = ({
           </div>
 
           <div className="flex items-center gap-3">
-            {/* Download zip button for Cloudflare Pages */}
-            <a
-              href="/dist.zip"
-              download="ortopedia-arratia-cloudflare.zip"
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 text-xs font-semibold transition-colors"
-              title="Descargar archivo ZIP ya compilado listo para subir a Cloudflare Pages"
-            >
-              <Download className="w-3.5 h-3.5" />
-              <span className="hidden sm:inline">Descargar ZIP Cloudflare</span>
-            </a>
-
             {/* Google Calendar sync status pill */}
             <div className="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-50 border border-amber-200 text-amber-800 text-xs">
               <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
