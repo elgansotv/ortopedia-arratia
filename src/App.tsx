@@ -361,7 +361,7 @@ export default function App() {
           muted
           loop
           playsInline
-          className="absolute inset-0 w-full h-full object-cover object-[85%_center] lg:object-center"
+          className="absolute inset-0 w-full h-full object-cover object-center"
         >
           <source
             src="./video_loop.mp4"
