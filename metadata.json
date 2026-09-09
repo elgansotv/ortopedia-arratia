@@ -1,0 +1,8 @@
+{
+  "name": "Ortopedia",
+  "description": "A single-page hero section for a smart prosthetics brand.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
