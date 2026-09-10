@@ -409,10 +409,10 @@ export default function App() {
           </div>
 
           <main className="flex-1 flex items-end pb-6 sm:pb-8 lg:pb-20 px-4 sm:px-8 md:px-16 lg:px-28 pt-16 sm:pt-20 lg:pt-24 landscape:pb-4 landscape:pt-12">
-            <div className="max-w-[200px] sm:max-w-[215px] lg:max-w-md landscape:max-w-[190px]">
+            <div className="max-w-[200px] sm:max-w-[215px] lg:max-w-xl landscape:max-w-[190px]">
               <a
                 href="#historia"
-                className="inline-flex items-center gap-1.5 text-[10px] sm:text-[11px] lg:text-[12px] font-semibold text-blue-600 bg-white/85 backdrop-blur-md px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full hover:bg-white transition-colors mb-2 sm:mb-3 lg:mb-3.5 group shadow-sm landscape:mb-1.5 landscape:py-0.5 landscape:text-[9.5px]"
+                className="inline-flex items-center gap-1.5 text-[10px] sm:text-[11px] lg:text-[14px] font-semibold text-blue-600 bg-white/85 backdrop-blur-md px-2.5 py-1 sm:px-3 sm:py-1.5 lg:px-4 lg:py-2 rounded-full hover:bg-white transition-colors mb-2 sm:mb-3 lg:mb-5 group shadow-sm landscape:mb-1.5 landscape:py-0.5 landscape:text-[9.5px]"
               >
                 Más de 25 años a tu lado
                 <span className="inline-block transition-transform duration-200 group-hover:translate-x-0.5">
@@ -420,19 +420,19 @@ export default function App() {
                 </span>
               </a>
 
-              <h1 className="text-[1.12rem] sm:text-[1.24rem] lg:text-[2.1rem] leading-[1.16] font-medium text-gray-900 tracking-tight mb-2 sm:mb-3 lg:mb-4 landscape:text-[1.05rem] landscape:leading-[1.14] landscape:mb-1.5">
+              <h1 className="text-[1.12rem] sm:text-[1.24rem] lg:text-[2.85rem] leading-[1.16] font-medium text-gray-900 tracking-tight mb-2 sm:mb-3 lg:mb-5 landscape:text-[1.05rem] landscape:leading-[1.14] landscape:mb-1.5">
                 Soluciones para vivir<br />
                 con más autonomía<br />
                 cada día.
               </h1>
 
-              <p className="text-[11px] sm:text-[12px] lg:text-[14px] leading-snug text-gray-700 font-medium mb-3 sm:mb-4 lg:mb-5 max-w-[175px] sm:max-w-[195px] lg:max-w-sm landscape:max-w-[170px] landscape:text-[10.5px] landscape:mb-2">
+              <p className="text-[11px] sm:text-[12px] lg:text-[17px] leading-snug text-gray-700 font-medium mb-3 sm:mb-4 lg:mb-7 max-w-[175px] sm:max-w-[195px] lg:max-w-md landscape:max-w-[170px] landscape:text-[10.5px] landscape:mb-2">
                 Asesoramiento profesional y cercano en Galdakao.
               </p>
 
               <a
                 href="#citas"
-                className="inline-flex items-center gap-1.5 text-[11.5px] sm:text-[12.5px] lg:text-[14px] font-medium text-white bg-blue-600 rounded-full px-4 py-2 sm:px-5 sm:py-2.5 lg:px-6 lg:py-3 hover:bg-blue-700 transition-all duration-200 group shadow-sm landscape:px-3 landscape:py-1.5 landscape:text-[11px]"
+                className="inline-flex items-center gap-1.5 text-[11.5px] sm:text-[12.5px] lg:text-[16px] font-medium text-white bg-blue-600 rounded-full px-4 py-2 sm:px-5 sm:py-2.5 lg:px-7 lg:py-3.5 hover:bg-blue-700 transition-all duration-200 group shadow-sm landscape:px-3 landscape:py-1.5 landscape:text-[11px]"
               >
                 Pide tu cita
                 <span className="transition-transform duration-200 group-hover:translate-x-0.5">
