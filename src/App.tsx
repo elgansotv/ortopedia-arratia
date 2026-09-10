@@ -64,7 +64,7 @@ const Calendar: React.FC<CalendarProps> = ({ bookedAppointments, blockedSlots, o
               setShowForm(false);
             }
           }}
-          className={`flex items-center justify-center h-8 w-8 sm:h-11 sm:w-11 md:h-12 md:w-12 text-xs sm:text-sm mx-auto rounded-full transition-all ${
+          className={`flex items-center justify-center h-8 w-8 sm:h-11 sm:w-11 md:h-12 md:w-12 lg:h-10 lg:w-10 text-xs sm:text-sm mx-auto rounded-full transition-all ${
             disabled ? 'text-gray-300 cursor-default' :
             isSelected ? 'bg-blue-600 text-white font-semibold shadow-md shadow-blue-500/30 scale-105 cursor-pointer' :
             'text-gray-700 hover:bg-blue-50 hover:text-blue-600 cursor-pointer'
@@ -76,7 +76,7 @@ const Calendar: React.FC<CalendarProps> = ({ bookedAppointments, blockedSlots, o
       day = addDays(day, 1);
     }
     rows.push(
-      <div className="grid grid-cols-7 gap-1 sm:gap-2 mb-2" key={day.toString()}>
+      <div className="grid grid-cols-7 gap-1 sm:gap-2 lg:gap-1.5 mb-2 lg:mb-1.5" key={day.toString()}>
         {days}
       </div>
     );
@@ -120,10 +120,10 @@ const Calendar: React.FC<CalendarProps> = ({ bookedAppointments, blockedSlots, o
   }
 
   return (
-    <div className="bg-white rounded-3xl p-4 sm:p-6 md:p-10 shadow-sm border border-gray-100 max-w-5xl mx-auto w-full overflow-hidden">
-      <div className="grid lg:grid-cols-[1fr_300px] gap-8 lg:gap-10 w-full min-w-0">
+    <div className="bg-white rounded-3xl p-4 sm:p-6 md:p-10 lg:p-6 shadow-sm border border-gray-100 max-w-5xl mx-auto w-full overflow-hidden">
+      <div className="grid lg:grid-cols-[1fr_300px] gap-8 lg:gap-8 w-full min-w-0">
         <div>
-          <div className="flex justify-between items-center mb-6 px-2">
+          <div className="flex justify-between items-center mb-6 lg:mb-4 px-2">
             <h3 className="text-lg font-medium text-gray-900 capitalize">
               {format(currentDate, 'MMMM yyyy', { locale: es })}
             </h3>
@@ -132,17 +132,17 @@ const Calendar: React.FC<CalendarProps> = ({ bookedAppointments, blockedSlots, o
               <button onClick={nextMonth} className="p-2 rounded-full hover:bg-gray-100 text-gray-600 transition-colors"><ChevronRight className="w-5 h-5"/></button>
             </div>
           </div>
-          
-          <div className="grid grid-cols-7 gap-1 sm:gap-2 mb-4 text-center">
+
+          <div className="grid grid-cols-7 gap-1 sm:gap-2 mb-4 lg:mb-2 text-center">
             {['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom'].map(d => (
               <div key={d} className="text-xs font-medium text-gray-400 uppercase tracking-wider">{d}</div>
             ))}
           </div>
-          
+
           <div>{rows}</div>
         </div>
 
-        <div className="border-t lg:border-t-0 lg:border-l border-gray-100 pt-8 lg:pt-0 lg:pl-10 flex flex-col h-full min-h-[300px]">
+        <div className="border-t lg:border-t-0 lg:border-l border-gray-100 pt-8 lg:pt-0 lg:pl-10 flex flex-col h-full lg:min-h-0 min-h-[300px]">
            {!selectedDate ? (
              <div className="flex-1 flex flex-col items-center justify-center text-center h-full text-gray-400">
                 <Clock className="w-8 h-8 mb-3 opacity-20" />
@@ -509,18 +509,18 @@ export default function App() {
         </div>
       </section>
 
-      <section id="conocenos" className="py-20 sm:py-24 px-4 sm:px-8 md:px-16 lg:px-28 bg-[#fdfdfd] border-t border-gray-100 w-full max-w-full overflow-hidden">
+      <section id="conocenos" className="py-20 sm:py-24 lg:py-14 px-4 sm:px-8 md:px-16 lg:px-28 bg-[#fdfdfd] border-t border-gray-100 w-full max-w-full overflow-hidden">
         <div className="max-w-6xl mx-auto w-full">
-          <div className="text-center mb-12 sm:mb-16">
+          <div className="text-center mb-12 sm:mb-16 lg:mb-8">
             <h2 className="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 mb-4">Conócenos</h2>
             <p className="text-gray-500 max-w-2xl mx-auto">Estamos aquí para ayudarte. Visítanos en nuestra clínica o contáctanos para cualquier duda.</p>
           </div>
-          
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-20 w-full min-w-0">
+
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 w-full min-w-0">
             <div className="w-full min-w-0">
-              <div className="bg-gray-50 p-6 sm:p-8 rounded-3xl border border-gray-100 mb-10 w-full">
-                <h3 className="text-xl font-medium mb-6 text-gray-900">Información de Contacto</h3>
-                <div className="space-y-6 text-gray-700">
+              <div className="bg-gray-50 p-6 sm:p-8 lg:p-6 rounded-3xl border border-gray-100 mb-10 lg:mb-6 w-full">
+                <h3 className="text-xl font-medium mb-6 lg:mb-4 text-gray-900">Información de Contacto</h3>
+                <div className="space-y-6 lg:space-y-4 text-gray-700">
                   <div className="flex gap-4">
                     <MapPin className="w-6 h-6 text-blue-600 shrink-0" />
                     <div>
@@ -548,7 +548,7 @@ export default function App() {
               </div>
 
               <div className="w-full min-w-0">
-                <h3 className="text-xl font-medium mb-6 text-gray-900 px-1">Lo que dicen de nosotros</h3>
+                <h3 className="text-xl font-medium mb-6 lg:mb-4 text-gray-900 px-1">Lo que dicen de nosotros</h3>
                 
                 {/* En móvil (incluido formato horizontal): Lista 100% vertical adaptada a la pantalla */}
                 <div className="lg:hidden flex flex-col gap-4 w-full">
@@ -579,55 +579,55 @@ export default function App() {
                 <div className="hidden lg:block relative w-full overflow-hidden max-w-full">
                   <div className="flex w-max animate-marquee gap-4">
                     {/* Primera serie de reseñas */}
-                    <div className="w-[300px] shrink-0 bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
-                      <div className="flex gap-1 mb-3">
+                    <div className="w-[300px] shrink-0 bg-white p-5 lg:p-4 rounded-2xl border border-gray-100 shadow-sm">
+                      <div className="flex gap-1 mb-2 lg:mb-1.5">
                         {[...Array(5)].map((_, j) => <Star key={j} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}
                       </div>
                       <p className="text-sm text-gray-600 italic leading-relaxed">"Excelente trato y profesionalidad. Me asesoraron perfectamente para encontrar la solución."</p>
-                      <p className="text-sm font-medium mt-4 text-gray-900">— María L.</p>
+                      <p className="text-sm font-medium mt-3 lg:mt-2 text-gray-900">— María L.</p>
                     </div>
-                    <div className="w-[300px] shrink-0 bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
-                      <div className="flex gap-1 mb-3">
+                    <div className="w-[300px] shrink-0 bg-white p-5 lg:p-4 rounded-2xl border border-gray-100 shadow-sm">
+                      <div className="flex gap-1 mb-2 lg:mb-1.5">
                         {[...Array(5)].map((_, j) => <Star key={j} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}
                       </div>
                       <p className="text-sm text-gray-600 italic leading-relaxed">"Llevo años confiando en ellos y la atención siempre es de 10. Son rápidos y los productos geniales."</p>
-                      <p className="text-sm font-medium mt-4 text-gray-900">— Juan A.</p>
+                      <p className="text-sm font-medium mt-3 lg:mt-2 text-gray-900">— Juan A.</p>
                     </div>
-                    <div className="w-[300px] shrink-0 bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
-                      <div className="flex gap-1 mb-3">
+                    <div className="w-[300px] shrink-0 bg-white p-5 lg:p-4 rounded-2xl border border-gray-100 shadow-sm">
+                      <div className="flex gap-1 mb-2 lg:mb-1.5">
                         {[...Array(5)].map((_, j) => <Star key={j} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}
                       </div>
                       <p className="text-sm text-gray-600 italic leading-relaxed">"Increíble atención personalizada. Me resolvieron todas las dudas sobre mi nueva silla de ruedas."</p>
-                      <p className="text-sm font-medium mt-4 text-gray-900">— Elena R.</p>
+                      <p className="text-sm font-medium mt-3 lg:mt-2 text-gray-900">— Elena R.</p>
                     </div>
                     {/* Segunda serie duplicada para el marquee continuo */}
-                    <div className="w-[300px] shrink-0 bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
-                      <div className="flex gap-1 mb-3">
+                    <div className="w-[300px] shrink-0 bg-white p-5 lg:p-4 rounded-2xl border border-gray-100 shadow-sm">
+                      <div className="flex gap-1 mb-2 lg:mb-1.5">
                         {[...Array(5)].map((_, j) => <Star key={j} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}
                       </div>
                       <p className="text-sm text-gray-600 italic leading-relaxed">"Excelente trato y profesionalidad. Me asesoraron perfectamente para encontrar la solución."</p>
-                      <p className="text-sm font-medium mt-4 text-gray-900">— María L.</p>
+                      <p className="text-sm font-medium mt-3 lg:mt-2 text-gray-900">— María L.</p>
                     </div>
-                    <div className="w-[300px] shrink-0 bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
-                      <div className="flex gap-1 mb-3">
+                    <div className="w-[300px] shrink-0 bg-white p-5 lg:p-4 rounded-2xl border border-gray-100 shadow-sm">
+                      <div className="flex gap-1 mb-2 lg:mb-1.5">
                         {[...Array(5)].map((_, j) => <Star key={j} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}
                       </div>
                       <p className="text-sm text-gray-600 italic leading-relaxed">"Llevo años confiando en ellos y la atención siempre es de 10. Son rápidos y los productos geniales."</p>
-                      <p className="text-sm font-medium mt-4 text-gray-900">— Juan A.</p>
+                      <p className="text-sm font-medium mt-3 lg:mt-2 text-gray-900">— Juan A.</p>
                     </div>
-                    <div className="w-[300px] shrink-0 bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
-                      <div className="flex gap-1 mb-3">
+                    <div className="w-[300px] shrink-0 bg-white p-5 lg:p-4 rounded-2xl border border-gray-100 shadow-sm">
+                      <div className="flex gap-1 mb-2 lg:mb-1.5">
                         {[...Array(5)].map((_, j) => <Star key={j} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}
                       </div>
                       <p className="text-sm text-gray-600 italic leading-relaxed">"Increíble atención personalizada. Me resolvieron todas las dudas sobre mi nueva silla de ruedas."</p>
-                      <p className="text-sm font-medium mt-4 text-gray-900">— Elena R.</p>
+                      <p className="text-sm font-medium mt-3 lg:mt-2 text-gray-900">— Elena R.</p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="w-full h-[360px] sm:h-[420px] lg:h-auto min-h-[360px] lg:min-h-[500px] bg-gray-100 rounded-3xl overflow-hidden relative border border-gray-200">
+            <div className="w-full h-[360px] sm:h-[420px] lg:h-auto min-h-[360px] lg:min-h-[420px] bg-gray-100 rounded-3xl overflow-hidden relative border border-gray-200">
                 <iframe 
                   src="https://maps.google.com/maps?q=Euskadi%20Kalea,%2011,%2048960%20Kurtzea,%20Bizkaia&t=&z=15&ie=UTF8&iwloc=&output=embed" 
                   width="100%" 
@@ -643,10 +643,10 @@ export default function App() {
         </div>
       </section>
 
-      <section id="citas" className="py-20 sm:py-24 px-4 sm:px-8 md:px-16 lg:px-28 bg-[#f8f9fa] w-full max-w-full overflow-hidden">
+      <section id="citas" className="py-20 sm:py-24 lg:py-14 px-4 sm:px-8 md:px-16 lg:px-28 bg-[#f8f9fa] w-full max-w-full overflow-hidden">
         <div className="max-w-6xl mx-auto w-full">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 mb-4">Pide tu Cita</h2>
+          <div className="text-center mb-12 lg:mb-6">
+            <h2 className="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 mb-4 lg:mb-2">Pide tu Cita</h2>
             <p className="text-gray-500 max-w-2xl mx-auto">Selecciona el día y la hora que mejor te venga y nos pondremos en contacto contigo para confirmar.</p>
           </div>
           
