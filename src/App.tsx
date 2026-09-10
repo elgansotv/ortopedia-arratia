@@ -395,26 +395,16 @@ export default function App() {
             </div>
           </nav>
 
-          {/* Botón arriba a la derecha con forma de llave para login de empleados (visible solo en ordenador / desktop lg:) */}
-          <div className="hidden lg:block absolute top-6 right-8 z-50">
+          {/* Botón discreto de acceso de empleados: solo icono de llave, apenas visible (visible solo en ordenador / desktop lg:) */}
+          <div className="hidden lg:block absolute top-6 right-6 z-50">
             <button
               id="btn-login-empleados-llave"
               onClick={() => setIsEmployeeModalOpen(true)}
-              className="group relative flex items-center gap-2 px-4 py-2.5 rounded-full bg-gradient-to-b from-white/95 via-white/90 to-white/75 backdrop-blur-xl border border-white/90 text-gray-800 hover:text-blue-700 transition-all duration-300 shadow-[0_12px_28px_-4px_rgba(0,0,0,0.2),0_4px_10px_-2px_rgba(0,0,0,0.08),inset_0_1.5px_2px_rgba(255,255,255,1),inset_0_-2px_4px_rgba(0,0,0,0.06)] hover:shadow-[0_16px_32px_-4px_rgba(37,99,235,0.25),inset_0_1.5px_2px_rgba(255,255,255,1)] hover:-translate-y-0.5 active:translate-y-0.5 active:scale-95"
-              title="Acceso de empleados · Revisar calendario de citas"
+              className="group flex items-center justify-center w-8 h-8 rounded-full text-gray-400/70 hover:text-gray-600 hover:bg-white/60 transition-all duration-300"
+              title="Acceso de empleados"
+              aria-label="Acceso de empleados"
             >
-              {/* Icono de llave con estilo 3D */}
-              <div className="w-7 h-7 rounded-full bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 text-white flex items-center justify-center shadow-md shadow-blue-600/30 group-hover:rotate-12 transition-transform duration-300 shrink-0">
-                <Key className="w-3.5 h-3.5" />
-              </div>
-              <div className="flex flex-col text-left">
-                <span className="text-[13px] font-bold text-gray-800 group-hover:text-blue-700 leading-none">
-                  Empleados
-                </span>
-                <span className="text-[10px] text-gray-400 font-medium leading-tight">
-                  Ver citas
-                </span>
-              </div>
+              <Key className="w-3.5 h-3.5" />
             </button>
           </div>
 
