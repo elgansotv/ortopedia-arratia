@@ -509,46 +509,46 @@ export default function App() {
         </div>
       </section>
 
-      <section id="conocenos" className="py-20 sm:py-24 lg:pt-24 lg:pb-8 px-4 sm:px-8 md:px-16 lg:px-28 bg-[#fdfdfd] border-t border-gray-100 w-full max-w-full overflow-hidden">
+      <section id="conocenos" className="py-20 sm:py-24 lg:pt-24 lg:pb-4 px-4 sm:px-8 md:px-16 lg:px-28 bg-[#fdfdfd] border-t border-gray-100 w-full max-w-full overflow-hidden">
         <div className="max-w-6xl mx-auto w-full">
-          <div className="text-center mb-12 sm:mb-16 lg:mb-8">
-            <h2 className="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 mb-4">Conócenos</h2>
-            <p className="text-gray-500 max-w-2xl mx-auto">Estamos aquí para ayudarte. Visítanos en nuestra clínica o contáctanos para cualquier duda.</p>
+          <div className="text-center mb-12 sm:mb-16 lg:mb-5">
+            <h2 className="text-3xl md:text-4xl lg:text-[1.75rem] font-medium tracking-tight text-gray-900 mb-4 lg:mb-2">Conócenos</h2>
+            <p className="text-gray-500 max-w-2xl mx-auto lg:text-sm">Estamos aquí para ayudarte. Visítanos en nuestra clínica o contáctanos para cualquier duda.</p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 w-full min-w-0">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-10 w-full min-w-0">
             <div className="w-full min-w-0">
-              <div className="bg-gray-50 p-6 sm:p-8 lg:p-6 rounded-3xl border border-gray-100 mb-10 lg:mb-6 w-full">
-                <h3 className="text-xl font-medium mb-6 lg:mb-4 text-gray-900">Información de Contacto</h3>
-                <div className="space-y-6 lg:space-y-4 text-gray-700">
-                  <div className="flex gap-4">
-                    <MapPin className="w-6 h-6 text-blue-600 shrink-0" />
+              <div className="bg-gray-50 p-6 sm:p-8 lg:p-5 rounded-3xl border border-gray-100 mb-10 lg:mb-4 w-full">
+                <h3 className="text-xl lg:text-base font-medium mb-6 lg:mb-3 text-gray-900">Información de Contacto</h3>
+                <div className="space-y-6 lg:space-y-2.5 text-gray-700 lg:text-sm">
+                  <div className="flex gap-4 lg:gap-3">
+                    <MapPin className="w-6 h-6 lg:w-4 lg:h-4 text-blue-600 shrink-0" />
                     <div>
-                      <p className="font-medium text-gray-900 mb-1">Dirección</p>
+                      <p className="font-medium text-gray-900 mb-1 lg:mb-0">Dirección</p>
                       <p>Euskadi Kalea, 11</p>
                       <p>48960 Kurtzea, Bizkaia</p>
                     </div>
                   </div>
-                  <div className="flex gap-4">
-                    <Phone className="w-6 h-6 text-blue-600 shrink-0" />
+                  <div className="flex gap-4 lg:gap-3">
+                    <Phone className="w-6 h-6 lg:w-4 lg:h-4 text-blue-600 shrink-0" />
                     <div>
-                      <p className="font-medium text-gray-900 mb-1">Teléfono</p>
+                      <p className="font-medium text-gray-900 mb-1 lg:mb-0">Teléfono</p>
                       <p>944 56 68 42</p>
                     </div>
                   </div>
-                  <div className="flex gap-4">
-                    <Clock className="w-6 h-6 text-blue-600 shrink-0" />
+                  <div className="flex gap-4 lg:gap-3">
+                    <Clock className="w-6 h-6 lg:w-4 lg:h-4 text-blue-600 shrink-0" />
                     <div>
-                      <p className="font-medium text-gray-900 mb-1">Horario</p>
+                      <p className="font-medium text-gray-900 mb-1 lg:mb-0">Horario</p>
                       <p>Lunes a Viernes: 9:30–13:30, 16:00–19:30</p>
-                      <p className="text-gray-400 mt-1">Sábado y Domingo: Cerrado</p>
+                      <p className="text-gray-400 mt-1 lg:mt-0">Sábado y Domingo: Cerrado</p>
                     </div>
                   </div>
                 </div>
               </div>
 
               <div className="w-full min-w-0">
-                <h3 className="text-xl font-medium mb-6 lg:mb-4 text-gray-900 px-1">Lo que dicen de nosotros</h3>
+                <h3 className="text-xl lg:text-base font-medium mb-6 lg:mb-2 text-gray-900 px-1">Lo que dicen de nosotros</h3>
                 
                 {/* En móvil (incluido formato horizontal): Lista 100% vertical adaptada a la pantalla */}
                 <div className="lg:hidden flex flex-col gap-4 w-full">
@@ -579,55 +579,55 @@ export default function App() {
                 <div className="hidden lg:block relative w-full overflow-hidden max-w-full">
                   <div className="flex w-max animate-marquee gap-4">
                     {/* Primera serie de reseñas */}
-                    <div className="w-[300px] shrink-0 bg-white p-5 lg:p-4 rounded-2xl border border-gray-100 shadow-sm">
+                    <div className="w-[300px] shrink-0 bg-white p-5 lg:p-3.5 rounded-2xl border border-gray-100 shadow-sm">
                       <div className="flex gap-1 mb-2 lg:mb-1.5">
                         {[...Array(5)].map((_, j) => <Star key={j} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}
                       </div>
-                      <p className="text-sm text-gray-600 italic leading-relaxed">"Excelente trato y profesionalidad. Me asesoraron perfectamente para encontrar la solución."</p>
-                      <p className="text-sm font-medium mt-3 lg:mt-2 text-gray-900">— María L.</p>
+                      <p className="text-sm lg:text-xs text-gray-600 italic leading-snug">"Excelente trato y profesionalidad. Me asesoraron perfectamente para encontrar la solución."</p>
+                      <p className="text-sm font-medium mt-3 lg:mt-1.5 text-gray-900">— María L.</p>
                     </div>
-                    <div className="w-[300px] shrink-0 bg-white p-5 lg:p-4 rounded-2xl border border-gray-100 shadow-sm">
+                    <div className="w-[300px] shrink-0 bg-white p-5 lg:p-3.5 rounded-2xl border border-gray-100 shadow-sm">
                       <div className="flex gap-1 mb-2 lg:mb-1.5">
                         {[...Array(5)].map((_, j) => <Star key={j} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}
                       </div>
-                      <p className="text-sm text-gray-600 italic leading-relaxed">"Llevo años confiando en ellos y la atención siempre es de 10. Son rápidos y los productos geniales."</p>
-                      <p className="text-sm font-medium mt-3 lg:mt-2 text-gray-900">— Juan A.</p>
+                      <p className="text-sm lg:text-xs text-gray-600 italic leading-snug">"Llevo años confiando en ellos y la atención siempre es de 10. Son rápidos y los productos geniales."</p>
+                      <p className="text-sm font-medium mt-3 lg:mt-1.5 text-gray-900">— Juan A.</p>
                     </div>
-                    <div className="w-[300px] shrink-0 bg-white p-5 lg:p-4 rounded-2xl border border-gray-100 shadow-sm">
+                    <div className="w-[300px] shrink-0 bg-white p-5 lg:p-3.5 rounded-2xl border border-gray-100 shadow-sm">
                       <div className="flex gap-1 mb-2 lg:mb-1.5">
                         {[...Array(5)].map((_, j) => <Star key={j} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}
                       </div>
-                      <p className="text-sm text-gray-600 italic leading-relaxed">"Increíble atención personalizada. Me resolvieron todas las dudas sobre mi nueva silla de ruedas."</p>
-                      <p className="text-sm font-medium mt-3 lg:mt-2 text-gray-900">— Elena R.</p>
+                      <p className="text-sm lg:text-xs text-gray-600 italic leading-snug">"Increíble atención personalizada. Me resolvieron todas las dudas sobre mi nueva silla de ruedas."</p>
+                      <p className="text-sm font-medium mt-3 lg:mt-1.5 text-gray-900">— Elena R.</p>
                     </div>
                     {/* Segunda serie duplicada para el marquee continuo */}
-                    <div className="w-[300px] shrink-0 bg-white p-5 lg:p-4 rounded-2xl border border-gray-100 shadow-sm">
+                    <div className="w-[300px] shrink-0 bg-white p-5 lg:p-3.5 rounded-2xl border border-gray-100 shadow-sm">
                       <div className="flex gap-1 mb-2 lg:mb-1.5">
                         {[...Array(5)].map((_, j) => <Star key={j} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}
                       </div>
-                      <p className="text-sm text-gray-600 italic leading-relaxed">"Excelente trato y profesionalidad. Me asesoraron perfectamente para encontrar la solución."</p>
-                      <p className="text-sm font-medium mt-3 lg:mt-2 text-gray-900">— María L.</p>
+                      <p className="text-sm lg:text-xs text-gray-600 italic leading-snug">"Excelente trato y profesionalidad. Me asesoraron perfectamente para encontrar la solución."</p>
+                      <p className="text-sm font-medium mt-3 lg:mt-1.5 text-gray-900">— María L.</p>
                     </div>
-                    <div className="w-[300px] shrink-0 bg-white p-5 lg:p-4 rounded-2xl border border-gray-100 shadow-sm">
+                    <div className="w-[300px] shrink-0 bg-white p-5 lg:p-3.5 rounded-2xl border border-gray-100 shadow-sm">
                       <div className="flex gap-1 mb-2 lg:mb-1.5">
                         {[...Array(5)].map((_, j) => <Star key={j} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}
                       </div>
-                      <p className="text-sm text-gray-600 italic leading-relaxed">"Llevo años confiando en ellos y la atención siempre es de 10. Son rápidos y los productos geniales."</p>
-                      <p className="text-sm font-medium mt-3 lg:mt-2 text-gray-900">— Juan A.</p>
+                      <p className="text-sm lg:text-xs text-gray-600 italic leading-snug">"Llevo años confiando en ellos y la atención siempre es de 10. Son rápidos y los productos geniales."</p>
+                      <p className="text-sm font-medium mt-3 lg:mt-1.5 text-gray-900">— Juan A.</p>
                     </div>
-                    <div className="w-[300px] shrink-0 bg-white p-5 lg:p-4 rounded-2xl border border-gray-100 shadow-sm">
+                    <div className="w-[300px] shrink-0 bg-white p-5 lg:p-3.5 rounded-2xl border border-gray-100 shadow-sm">
                       <div className="flex gap-1 mb-2 lg:mb-1.5">
                         {[...Array(5)].map((_, j) => <Star key={j} className="w-4 h-4 fill-yellow-400 text-yellow-400" />)}
                       </div>
-                      <p className="text-sm text-gray-600 italic leading-relaxed">"Increíble atención personalizada. Me resolvieron todas las dudas sobre mi nueva silla de ruedas."</p>
-                      <p className="text-sm font-medium mt-3 lg:mt-2 text-gray-900">— Elena R.</p>
+                      <p className="text-sm lg:text-xs text-gray-600 italic leading-snug">"Increíble atención personalizada. Me resolvieron todas las dudas sobre mi nueva silla de ruedas."</p>
+                      <p className="text-sm font-medium mt-3 lg:mt-1.5 text-gray-900">— Elena R.</p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="w-full h-[360px] sm:h-[420px] lg:h-auto min-h-[360px] lg:min-h-[420px] bg-gray-100 rounded-3xl overflow-hidden relative border border-gray-200">
+            <div className="w-full h-[360px] sm:h-[420px] lg:h-auto min-h-[360px] lg:min-h-[320px] bg-gray-100 rounded-3xl overflow-hidden relative border border-gray-200">
                 <iframe 
                   src="https://maps.google.com/maps?q=Euskadi%20Kalea,%2011,%2048960%20Kurtzea,%20Bizkaia&t=&z=15&ie=UTF8&iwloc=&output=embed" 
                   width="100%" 
