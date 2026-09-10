@@ -509,7 +509,7 @@ export default function App() {
         </div>
       </section>
 
-      <section id="conocenos" className="py-20 sm:py-24 lg:py-14 px-4 sm:px-8 md:px-16 lg:px-28 bg-[#fdfdfd] border-t border-gray-100 w-full max-w-full overflow-hidden">
+      <section id="conocenos" className="py-20 sm:py-24 lg:pt-24 lg:pb-8 px-4 sm:px-8 md:px-16 lg:px-28 bg-[#fdfdfd] border-t border-gray-100 w-full max-w-full overflow-hidden">
         <div className="max-w-6xl mx-auto w-full">
           <div className="text-center mb-12 sm:mb-16 lg:mb-8">
             <h2 className="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 mb-4">Conócenos</h2>
@@ -643,7 +643,7 @@ export default function App() {
         </div>
       </section>
 
-      <section id="citas" className="py-20 sm:py-24 lg:py-14 px-4 sm:px-8 md:px-16 lg:px-28 bg-[#f8f9fa] w-full max-w-full overflow-hidden">
+      <section id="citas" className="py-20 sm:py-24 lg:pt-24 lg:pb-8 px-4 sm:px-8 md:px-16 lg:px-28 bg-[#f8f9fa] w-full max-w-full overflow-hidden">
         <div className="max-w-6xl mx-auto w-full">
           <div className="text-center mb-12 lg:mb-6">
             <h2 className="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 mb-4 lg:mb-2">Pide tu Cita</h2>
